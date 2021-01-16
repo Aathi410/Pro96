@@ -16,6 +16,6 @@ export default class App extends React.Component{
 const switchNavigator = createSwitchNavigator({
   WelcomeScreen:{screen:WelcomeScreen},
   BottomTab:{screen:AppDrawerNavigator},
-})
+});
 
 const AppConatiner = createAppContainer(switchNavigator);
