@@ -3,10 +3,11 @@ import {Image} from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation-tabs'
 import CreateTopicScreen from '../screens/CreateTopicScreen';
 import AllTopicScreen from '../screens/AllTopicScreen';
+import {AppStackNavigator} from './AppStackNavigator';
 
 export const AppTabNavigator = createBottomTabNavigator({
     AllTopics:{
-        screen:AllTopicScreen,
+        screen:AppStackNavigator,
         navigationOptions:{
             tabBarIcon:<Image
                 source = {require('../assets/request-list.png')}
