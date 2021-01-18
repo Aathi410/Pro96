@@ -59,7 +59,7 @@ export default class AllTopicScreen extends React.Component{
     render(){
         return(
             <View style={{flex:1}}>
-                <MyHeader title = "Support A Topic"/>
+                <MyHeader title = "Support A Topic" navigation = {this.props.navigation}/>
                 <View style={{flex:1}}>
                     {
                         this.state.createdTopicList.length === 0

@@ -73,7 +73,7 @@ export default class MySupportScreen extends Component {
     .then((snapshot)=>{
       snapshot.forEach((doc)=>{
         if(topicStatus === "Stop Supporting"){
-          message =  "congratulations, You Have A Supporter"
+          message =  "Congratulations, You Have A Supporter"
         }
         else{
          message =  "A Person Has Interest In Supporting You"

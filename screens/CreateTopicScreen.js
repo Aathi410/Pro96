@@ -37,7 +37,7 @@ export default class CreateTopicScreen extends React.Component{
     render(){
         return(
             <View style={{flex:1}}>
-                <MyHeader title = "Create Your Topic"/>
+                <MyHeader title = "Create Your Topic" navigation = {this.props.navigation}/>
                 <KeyboardAvoidingView style={styles.keyBoardStyle}>
                     <TextInput
                         style={styles.formTextInput}
