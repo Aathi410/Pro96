@@ -101,7 +101,7 @@ export default class MySupportScreen extends Component {
            style={[
              styles.button,
              {
-               backgroundColor : item.topic_status === "Stop Supporting" ? "red" : "#ff5722"
+               backgroundColor : item.topic_status === "Stop Supporting" ? "red" : "#ff7f00"
              }
            ]}
            onPress={()=>{
@@ -129,7 +129,7 @@ export default class MySupportScreen extends Component {
    render(){
      return(
        <View style={{flex:1}}>
-         <MyHeader navigation={this.props.navigation} title="Support Entrepreneur"/>
+         <MyHeader navigation={this.props.navigation} title="Support A Topic"/>
          <View style={{flex:1}}>
            {
              this.state.allSupporters.length === 0
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     height:30,
     justifyContent:'center',
     alignItems:'center',
-    backgroundColor:"#ff5722",
+    backgroundColor:"#ff7f00",
     shadowColor: "#000",
     shadowOffset: {
        width: 0,

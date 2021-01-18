@@ -59,7 +59,7 @@ export default class AllTopicScreen extends React.Component{
     render(){
         return(
             <View style={{flex:1}}>
-                <MyHeader title = "Support A Topic" navigation = {this.props.navigation}/>
+                <MyHeader title = "Veiw Topics" navigation = {this.props.navigation}/>
                 <View style={{flex:1}}>
                     {
                         this.state.createdTopicList.length === 0
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
       height:30,
       justifyContent:'center',
       alignItems:'center',
-      backgroundColor:"#ff5722",
+      backgroundColor:"#ff7f00",
       shadowColor: "#000",
       shadowOffset: {
          width: 0,

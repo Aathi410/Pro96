@@ -3,6 +3,7 @@ import {View,Text,TouchableOpacity,StyleSheet,TextInput,KeyboardAvoidingView,Ale
 import MyHeader from '../components/MyHeader';
 import db from '../config';
 import firebase from 'firebase';
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default class CreateTopicScreen extends React.Component{
     constructor(){
@@ -64,7 +65,7 @@ export default class CreateTopicScreen extends React.Component{
                         onPress={()=>{
                             this.addTopic(this.state.topicName,this.state.description)
                         }}>
-                        <Text>Create</Text>
+                        <Text style={styles.buttontxt}>Create</Text>
                     </TouchableOpacity>   
                 </KeyboardAvoidingView>
             </View>
@@ -73,37 +74,90 @@ export default class CreateTopicScreen extends React.Component{
 }
 
 const styles = StyleSheet.create({
-    keyBoardStyle : {
-      flex:1,
-      alignItems:'center',
-      justifyContent:'center'
+    keyBoardStyle: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
     },
-    formTextInput:{
-      width:"75%",
-      height:35,
-      alignSelf:'center',
-      borderColor:'#ffab91',
-      borderRadius:10,
-      borderWidth:1,
-      marginTop:20,
-      padding:10,
+    formTextInput: {
+      width: "80%",
+      height: RFValue(35),
+      borderWidth: 1.4,
+      padding: 10,
     },
-    button:{
-      width:"50%",
-      height:50,
-      justifyContent:'center',
+    ImageView:{
+      flex: 0.3,
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop:20
+    },
+    imageStyle:{
+      height: RFValue(150),
+      width: RFValue(150),
+      alignSelf: "center",
+      borderWidth: 5,
+      borderRadius: RFValue(10),
+      
+    },
+    requestedbookName:{
+      fontSize: RFValue(30),
+      fontWeight: "500",
+      padding: RFValue(10),
+      fontWeight: "bold",
       alignItems:'center',
-      borderRadius:10,
-      backgroundColor:"#ff5722",
+      marginLeft:RFValue(60)
+    },
+    status:{
+      fontSize: RFValue(20),
+      marginTop: RFValue(30),
+    },
+    bookstatus:{
+      marginLeft:RFValue(275),
+      padding: RFValue(10),
+      fontSize: RFValue(14),
+      fontWeight: "500",
+      marginTop: RFValue(50),
+      borderWidth: 1.4,
+      marginRight:RFValue(250)
+    },
+    buttonView:{
+      flex: 0.2,
+      marginTop:50,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    buttontxt:{
+      fontSize: RFValue(15),
+      fontWeight: "500",
+      color: "black",
+    },
+    touchableopacity:{
+      alignItems: "center",
+      backgroundColor: "#DDDDDD",
+      padding: 10,
+      width: "90%",
+    },
+    requestbuttontxt:{
+      fontSize: RFValue(20),
+      fontWeight: "bold",
+      color: "black",
+    },
+    button: {
+      marginTop:50,
+      width: "20%",
+      height: RFValue(40),
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: RFValue(18),
+      backgroundColor: "#ff7f00",
       shadowColor: "#000",
       shadowOffset: {
-         width: 0,
-         height: 8,
+        width: 0,
+        height: 8,
       },
       shadowOpacity: 0.44,
       shadowRadius: 10.32,
-      elevation: 16,
-      marginTop:20
-      },
-    }
-  )
+      elevation: 16
+    },
+  });
+  

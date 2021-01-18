@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Card, Header, Icon} from 'react-native-elements';
 import firebase from 'firebase';
 import db from '../config';
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default class ReceiverDetailsScreen extends React.Component{
     constructor(props){
@@ -85,9 +86,9 @@ export default class ReceiverDetailsScreen extends React.Component{
                     <Header
                         leftComponent={<Icon name="arrow-left" type="feather"
                         color="black" onPress={()=>this.props.navigation.goBack()}/>}
-                        centerComponent={{text:"Support A Topic",
-                            style:{color:"#9085a9", fontSize:20,fontWeight:'bold'}}}
-                        backgroundColor={"#eaf8fe"}
+                        centerComponent={{text:"Support Topic",
+                            style:{color:"black", fontSize:23.5,fontWeight:'bold'}}}
+                        backgroundColor={"#ff7f00"}
                     />
                 </View>
                 <View style={{flex:0.3}}>
@@ -129,7 +130,7 @@ export default class ReceiverDetailsScreen extends React.Component{
                                     this.addNotification()
                                     this.props.navigation.navigate("MySupport")
                                 }}>
-                                <Text>I Want To Support</Text>
+                                <Text style={{fontSize:18, fontWeight:'500'}}>I Want To Support</Text>
                             </TouchableOpacity>
                         )
                         : null
@@ -142,26 +143,26 @@ export default class ReceiverDetailsScreen extends React.Component{
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex:1,
-    },
-    buttonContainer : {
-      flex:0.3,
-      justifyContent:'center',
-      alignItems:'center'
-    },
-    button:{
-      width:200,
-      height:50,
-      justifyContent:'center',
-      alignItems : 'center',
-      borderRadius: 10,
-      backgroundColor: 'orange',
-      shadowColor: "#000",
-      shadowOffset: {
-         width: 0,
-         height: 8
-       },
-      elevation : 16
-    }
-  })
+  container: {
+    flex:1,
+  },
+  buttonContainer : {
+    flex:0.3,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  button:{
+    width:"28%",
+    height:RFValue(35),
+    justifyContent:'center',
+    alignItems : 'center',
+    borderRadius: 20,
+    backgroundColor: "#ff7f00",
+    shadowColor: "#000",
+    shadowOffset: {
+       width: 0,
+       height: 8
+     },
+    elevation : 16
+  }
+})

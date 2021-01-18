@@ -3,6 +3,7 @@ import {Text,View,TouchableOpacity, StyleSheet, Alert, TextInput,
 Modal, ScrollView, KeyboardAvoidingView} from 'react-native';
 import db from '../config';
 import firebase from 'firebase';
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default class WelcomeScreen extends React.Component{
     constructor(){
@@ -173,31 +174,28 @@ export default class WelcomeScreen extends React.Component{
     render(){
         return(
             <View style={styles.container}>
-                <View style={{justifyContent:"center",alignItems:"center"}}>
-                  
-                </View>
+                
                 {this.showModal()}
 
-                <View style={{justifyContent:"center",alignItems:"center"}}>
-                  <Text style={styles.title}>Share Ideas</Text>
-                  <Text style={styles.title}>A Social Work App</Text>
-                </View>
+                <Text style={styles.title}>Share Ideas</Text>
+                <Text style={[styles.title,{marginTop:-8,}]}>A Social Work App</Text>
+              
 
-                <View>
+                <View style={styles.profileContainer}>
+                    <Text style={{color:"black", fontSize:19, fontWeight:'500', marginRight:213,}}>User Email</Text>    
                     <TextInput
                         style={styles.loginBox}
-                        placeholder="Abc@exaample.com"
                         keyboardType="email-address"
                         onChangeText={(text)=>{
                             this.setState({
-                                emailId:text,
+                                username:text,
                             })
                         }}
                     />
 
+                    <Text style={{marginTop:20,color:"black", fontSize:19, fontWeight:'500', marginRight:215,}}>Password</Text>
                     <TextInput
                         style={styles.loginBox}
-                        placeholder="Enter Password"
                         secureTextEntry={true}
                         onChangeText={(text)=>{
                             this.setState({
@@ -209,7 +207,7 @@ export default class WelcomeScreen extends React.Component{
                     <TouchableOpacity
                       style={[styles.button,{marginBottom:20,marginTop:20}]}
                       onPress={()=>{
-                        this.userLogin(this.state.emailId,this.state.password)
+                        this.userLogin(this.state.username,this.state.password)
                       }}>
                       <Text style={styles.buttonText}>Login</Text>  
                     </TouchableOpacity>
@@ -232,106 +230,110 @@ export default class WelcomeScreen extends React.Component{
 
 const styles = StyleSheet.create({
   container:{
-   flex:1,
-   backgroundColor:'#F8BE85',
-   alignItems: 'center',
-   justifyContent: 'center'
- },
- profileContainer:{
-   flex:1,
-   justifyContent:'center',
-   alignItems:'center',
- },
- title :{
-   fontSize:65,
-   fontWeight:'300',
-   paddingBottom:30,
-   color : 'black'
- },
- loginBox:{
-   width: 300,
-   height: 40,
-   borderBottomWidth: 1.5,
-   borderColor : '#ff8a65',
-   fontSize: 20,
-   margin:10,
-   paddingLeft:10
- },
- KeyboardAvoidingView:{
-   flex:1,
-   justifyContent:'center',
-   alignItems:'center'
- },
- modalTitle :{
-   justifyContent:'center',
-   alignSelf:'center',
-   fontSize:30,
-   color:'#ff5722',
-   margin:50
- },
- modalContainer:{
-   flex:1,
-   borderRadius:20,
-   justifyContent:'center',
-   alignItems:'center',
-   backgroundColor:"#ffff",
-   marginRight:30,
-   marginLeft : 30,
-   marginTop:80,
-   marginBottom:80,
- },
- formTextInput:{
-   width:"75%",
-   height:35,
-   alignSelf:'center',
-   borderColor:'#ffab91',
-   borderRadius:10,
-   borderWidth:1,
-   marginTop:20,
-   padding:10
- },
- registerButton:{
-   width:200,
-   height:40,
-   alignItems:'center',
-   justifyContent:'center',
-   borderWidth:1,
-   borderRadius:10,
-   marginTop:30
- },
- registerButtonText:{
-   color:'#ff5722',
-   fontSize:15,
-   fontWeight:'bold'
- },
- cancelButton:{
-   width:200,
-   height:30,
-   justifyContent:'center',
-   alignItems:'center',
-   marginTop:5,
- },
-
- button:{
-   width:300,
-   height:50,
-   justifyContent:'center',
-   alignItems:'center',
-   borderRadius:25,
-   backgroundColor:"#ff9800",
-   shadowColor: "#000",
-   shadowOffset: {
-      width: 0,
-      height: 8,
-   },
-   shadowOpacity: 0.30,
-   shadowRadius: 10.32,
-   elevation: 16,
-   padding: 10
- },
- buttonText:{
-   color:'#ffff',
-   fontWeight:'200',
-   fontSize:20
- }
+    flex:1,
+    backgroundColor:"#ff9d1e"
+  },
+  profileContainer:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:90
+  },
+  title :{
+    marginTop:25,
+    alignSelf:'center',
+    fontSize:60,
+    fontWeight:'500',
+    paddingBottom:30,
+    color : 'black'
+  },
+  loginBox:{
+    width: 300,
+    height: RFValue(25),
+    borderBottomWidth: 3,
+    borderColor : '#000000',
+    fontSize: 20,
+    margin:10,
+    paddingLeft:10
+  },
+  button:{
+    width:300,
+    height:RFValue(33),
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:25,
+    backgroundColor:"#ff7f00",
+    shadowColor: "#000",
+    shadowOffset: {
+       width: 0,
+       height: 8,
+    },
+    shadowOpacity: 0.30,
+    shadowRadius: 10.32,
+    elevation: 16,
+  },
+  buttonText:{
+    color:'black',
+    fontWeight:'400',
+    fontSize:20
+  },
+  buttonContainer:{
+    flex:1,
+    alignItems:'center'
+  },
+  KeyboardAvoidingView:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  modalTitle :{
+    justifyContent:'center',
+    alignSelf:'center',
+    fontSize:30,
+    color:"#d61a3c",
+    margin:50
+  },
+  modalContainer:{
+    flex:1,
+    borderRadius:20,
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor:"#ffff",
+    marginRight:30,
+    marginLeft : 30,
+    marginTop:80,
+    marginBottom:80,
+  },
+  formTextInput:{
+    width:"75%",
+    height:35,
+    alignSelf:'center',
+    borderColor:"#d61a3c",
+    borderRadius:10,
+    borderWidth:1,
+    marginTop:20,
+    padding:10
+  },
+  registerButton:{
+    width:200,
+    height:RFValue(25),
+    alignItems:'center',
+    justifyContent:'center',
+    borderWidth:1,
+    borderRadius:10,
+    marginTop:30
+  },
+  registerButtonText:{
+    color:"#d61a3c",
+    fontSize:15,
+    fontWeight:'bold'
+  },
+  cancelButton:{
+    width:200,
+    height:RFValue(15),
+    justifyContent:'center',
+    alignItems:'center',
+    marginTop:5,
+    color:"#d61a3c"
+  },
 })

@@ -32,7 +32,7 @@ export default class MyHeader extends React.Component{
   BellIconWithBadge=()=>{
     return(
       <View>
-        <Icon name='bell' type="font-awesome" color="#696969" size={25} 
+        <Icon name='bell' type="font-awesome" color="black" size={25.5} 
           onPress={()=>{
             this.props.navigation.navigate('Notifications')
           }}/>
@@ -47,14 +47,14 @@ export default class MyHeader extends React.Component{
   render(){
     return(
       <Header
-        leftComponent={<Icon name="bars" type='font-awesome' color='#696969'
+        leftComponent={<Icon name="bars" type='font-awesome' color='black' size={25.5}
           onPress={()=>{
             this.props.navigation.toggleDrawer()
           }}/>}
         centerComponent={{ text: this.props.title, 
-          style: { color: '#90A5A9', fontSize:20,fontWeight:"bold", } }}
+          style: { color: 'black', fontSize:23.5,fontWeight:"bold", } }}
         rightComponent={<this.BellIconWithBadge {...this.props}/>}
-        backgroundColor = "#eaf8fe"
+        backgroundColor = "#ff7f00"
     />
     );
   }

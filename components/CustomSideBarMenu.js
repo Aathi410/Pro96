@@ -80,7 +80,7 @@ export default class CustomSideBarMenu extends React.Component{
   render(){
     return(
       <View style={styles.container}>
-          <View style={{flex:0.4, alignItems:"center", backgroundColor:"#d61a3c"}}>
+          <View style={{flex:0.4, alignItems:"center", backgroundColor:"#ff7f00"}}>
             <Avatar 
               rounded
               source={{uri:this.state.image}}
